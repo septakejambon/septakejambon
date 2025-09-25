@@ -1,165 +1,245 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <title>Selamat Ulang Tahun Septa 🎉</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      font-family: "Comic Neue", cursive, sans-serif;
-      color: #333;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Sayang!</title>
 
-    h1, h2 {
-      text-align: center;
-      color: #fff;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-    }
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      animation: fadeIn 2s ease-in-out;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    .foto {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    .foto img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 6px solid #fff;
-      box-shadow: 0 0 20px rgba(255, 0, 100, 0.7);
-      animation: pulse 2s infinite;
-    }
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-    p {
-      font-size: 18px;
-      line-height: 1.7;
-      margin: 30px 0;
-    }
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Gradasi Warna Cerah */
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            overflow-x: hidden; /* Mencegah scroll horizontal */
+        }
 
-    .signature {
-      text-align: right;
-      font-style: italic;
-      font-weight: bold;
-      margin-top: 30px;
-      font-size: 20px;
-      color: #555;
-    }
+        /* Styling untuk efek ketikan Typed.js */
+        .typed-cursor {
+            font-size: 2.5rem;
+            color: #f59e0b; /* Aksen kuning */
+        }
+        
+        /* Container untuk Balon */
+        .balloon-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none; /* Agar tidak menghalangi interaksi */
+            z-index: 999;
+        }
 
-    /* Animasi */
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
+        /* Animasi Balon Mengambang ke Atas */
+        @keyframes float-up {
+            0% {
+                transform: translateY(100vh) scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.2);
+                opacity: 0;
+            }
+        }
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
+        .balloon {
+            position: absolute;
+            bottom: -150px; /* Mulai dari bawah layar */
+            font-size: 3rem; /* Ukuran balon */
+            animation: float-up 15s linear infinite;
+        }
 
-    .balloon {
-      position: absolute;
-      bottom: -150px;
-      width: 80px;
-      height: 100px;
-      border-radius: 50% 50% 50% 50%;
-      animation: float 10s infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-600px) rotate(20deg); }
-      100% { transform: translateY(0) rotate(-20deg); }
-    }
-
-    .confetti {
-      position: fixed;
-      width: 10px;
-      height: 10px;
-      background: gold;
-      top: -10px;
-      animation: fall 5s infinite;
-    }
-
-    @keyframes fall {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1;}
-      100% { transform: translateY(100vh) rotate(360deg); opacity: 0;}
-    }
-  </style>
+        /* Swiper.js custom styling */
+        .swiper-button-next, .swiper-button-prev {
+            color: #8b5cf6; /* Aksen ungu */
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #8b5cf6;
+        }
+    </style>
 </head>
-<body>
-  <h1>🎂 Selamat Ulang Tahun, Septa! 🎂</h1>
-  <h2>Dari sahabatmu, Zaka 💖</h2>
+<body class="text-gray-800">
 
-  <div class="container">
-    <div class="foto">
-      <!-- Ganti link src dengan foto Septa -->
-      <img src="septa hd (10).jpeg" alt="Foto Septa">
+    <div class="balloon-container">
+        <div class="balloon" style="left: 10%; animation-duration: 20s;">🎈</div>
+        <div class="balloon" style="left: 30%; animation-duration: 15s; animation-delay: 2s;">🎈</div>
+        <div class="balloon" style="left: 50%; animation-duration: 18s; animation-delay: 5s;">🎈</div>
+        <div class="balloon" style="left: 70%; animation-duration: 22s; animation-delay: 1s;">🎈</div>
+        <div class="balloon" style="left: 90%; animation-duration: 16s; animation-delay: 3s;">🎈</div>
     </div>
 
-    <p>Septa yang baik,</p>
-    <p>Selamat ulang tahun, sahabatku.</p>
-    <p>
-      Kita sudah berjalan cukup jauh — dari awal akrab di kelas 1–2 SMK, magang bareng di Bank Mandiri, kerja bersama, nongkrong di ADF, sampai momen-momen kecil yang sering bikin ketawa. Semua itu jadi bagian penting dari perjalanan kita, dan aku masih menghargainya sampai sekarang.
-    </p>
-    <p>
-      Aku sadar akhir-akhir ini kita agak renggang. Aku akui mungkin banyak salah datang dariku. Salah satunya ketika aku tidak mengundangmu pas aku semhas. Alasan utamanya sederhana: aku lagi belajar untuk tidak terlalu bergantung pada orang lain. Bahkan ke teman-teman kampusku sendiri pun aku sudah berusaha berhenti bergantung. Akhir-akhir ini aku malah sering ke mana-mana sendiri — nggak ambek sopo-sopo, nggak ambek arek-arek ADF, nggak ambek konco-konco kampus. Bener-bener dewean: ke kafe sendiri, nonton bioskop sendiri, keluyuran nandi-nandi gak jelas dewean. Selain itu, ada satu alasan lagi yang belum bisa kujelaskan ke siapapun: <b>aku sedang menghadapi sebuah masalah pribadi yang belum selesai, dan untuk sekarang aku memilih tidak menceritakannya.</b> Karena itu energiku lagi negatif dan aku takut menyalurkan beban itu ke orang lain, maka aku memilih mundur sementara. Tapi keputusan itu justru bikin jarak. <b>Dari hati yang paling dalam, aku minta maaf sebesar-besarnya bila itu melukai atau membuatmu merasa tersisih.</b> Aku benar-benar nggak bermaksud begitu — dan kalau masalahnya sudah kelar, aku akan cerita.
-    </p>
-    <p>
-      Aku juga tahu kamu sedang menanggung beban besar dengan kepergian ayahmu. Aku nggak punya kata-kata yang cukup, tapi aku ingin kamu tahu: meskipun kadang aku nggak hadir tepat saat kamu butuh, aku tetap nganggepmu sahabat dekat, dan aku ingin tetap ada di lingkar hidupmu.
-    </p>
-    <p>
-      Kado ini sederhana kalau mungkin dibandingin sama punya anak anak, tapi tak jamin iki penuh makna:
-    </p>
-    <ul>
-      <li><b>Bunga dalam kaca yang bisa menyala:</b> Setiap kali kamu menyalakannya di ruangan gelap, semoga itu jadi pengingat: meski dunia kadang terasa gelap, selalu ada cahaya yang bertahan. Begitulah persahabatan kita — mungkin sederhana, tapi tetap ada, bahkan ketika keadaan sulit.</li>
-      <li><b>Puzzle dengan fotomu:</b> Setiap kepingnya melambangkan bagian dari dirimu — suka duka, usaha, pencapaian, dan cerita hidup. Butuh kesabaran untuk merangkainya, sama seperti memahami seseorang seutuhnya. Kalau ada satu keping hilang, gambarnya tak akan lengkap — begitu juga persahabatan kita, yang terasa utuh karena ada dirimu di dalamnya.</li>
-      <li><b>Lukisan tanganku:</b> Masio elek tapi aku ingin ada sesuatu yang benar-benar lahir dari usahaku, bukan instan. Sebagai tanda ketulusan dan penghargaan untukmu.</li>
-    </ul>
-    <p>
-      Harapanku, kita bisa nongkrong bareng lagi. Entah di ADF atau di mana pun. Cerita, bercanda, dan tetap saling dukung. Semoga kita bisa terus bersama dalam persahabatan ini, sampai nanti kita punya jalan masing-masing, bahkan sampai tua sekalipun.
-    </p>
-    <p>
-      <b>Terima kasih juga yang sebesar-besarnya, sepenuh-penuhnya, karena kamu sudah jadi sahabat yang ikut mewarnai perjalanan hidupku.</b> Aku bersyukur bisa punya sahabat sepertimu.
-    </p>
-    <p class="signature">— Zaka</p>
-  </div>
+    <main class="relative z-10">
 
-  <!-- Balon-balon -->
-  <div class="balloon" style="left:10%; background: pink;"></div>
-  <div class="balloon" style="left:40%; background: lightblue; animation-delay: 2s;"></div>
-  <div class="balloon" style="left:70%; background: lightgreen; animation-delay: 4s;"></div>
+        <section class="min-h-screen flex flex-col justify-center items-center text-center p-6">
+            <h1 class="text-4xl md:text-6xl font-bold text-white shadow-lg mb-6">
+                <span id="typed-greeting"></span>
+            </h1>
+            
+            <img 
+                src="pp.png" 
+                alt="Foto Ulang Tahun"
+                class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-white shadow-2xl transition-transform duration-300 hover:scale-105"
+                data-aos="zoom-in"
+                data-aos-duration="1000">
 
-  <!-- Confetti -->
-  <script>
-    for(let i=0; i<50; i++){
-      let confetti = document.createElement("div");
-      confetti.classList.add("confetti");
-      confetti.style.left = Math.random()*100 + "vw";
-      confetti.style.background = ["gold","red","blue","green","purple"][Math.floor(Math.random()*5)];
-      confetti.style.animationDuration = (Math.random()*3+2) + "s";
-      document.body.appendChild(confetti);
-    }
-  </script>
+            <p class="mt-6 text-white text-lg animate-bounce">
+                Scroll ke bawah untuk melihat lebih banyak 👇
+            </p>
+        </section>
+
+        <section class="py-16 px-4">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8" data-aos="fade-up">
+                    🎁 Galeri Kenangan Kita 🎁
+                </h2>
+                <div class="swiper max-w-3xl mx-auto shadow-xl rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="kenangan (1).jpg" alt="Kenangan 1" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="kenangan (1).jpeg" alt="Kenangan 2" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="kenangan (2).jpg" alt="Kenangan 3" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="kenangan (2).jpeg" alt="Kenangan 4" class="w-full h-full object-cover"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-4">
+            <div 
+                class="container mx-auto max-w-4xl bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-2xl"
+                data-aos="zoom-in-up"
+                data-aos-duration="800">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">
+                    🎂 Sebuah Pesan Untukmu...
+                </h2>
+                <div class="text-base md:text-lg text-left space-y-4">
+                    <p>
+                        Hai Septa Kejambon,
+                    </p>
+                    <p>
+                        Selamat ulang tahun, sahabatku.
+                    </p>
+                    <p>
+                        Kita sudah berjalan cukup jauh — dari awal akrab di kelas 1–2 SMK, magang bareng di Bank Mandiri, kerja bersama, nongkrong di ADF, sampai momen-momen kecil yang sering bikin ketawa. Semua itu jadi bagian penting dari perjalanan kita, dan aku masih menghargainya sampai sekarang.
+                    </p>
+                    <p>
+                        Aku sadar akhir-akhir ini kita agak renggang. Aku akui mungkin banyak salah datang dariku. Salah satunya ketika aku tidak mengundangmu pas aku semhas. Alasan utamanya sederhana: aku lagi belajar untuk tidak terlalu bergantung pada orang lain. Bahkan ke teman-teman kampusku sendiri pun aku sudah berusaha berhenti bergantung. Akhir-akhir ini aku malah sering ke mana-mana sendiri — nggak ambek sopo-sopo, nggak ambek arek-arek ADF, nggak ambek konco-konco kampus. Bener-bener dewean: ke kafe sendiri, nonton bioskop sendiri, keluyuran nandi-nandi gak jelas dewean. Selain itu, ada satu alasan lagi yang belum bisa kujelaskan ke siapapun: aku sedang menghadapi sebuah masalah pribadi yang belum selesai, dan untuk sekarang aku memilih tidak menceritakannya. Karena itu energiku lagi negatif dan aku takut menyalurkan beban itu ke orang lain, maka aku memilih mundur sementara. Tapi keputusan itu justru bikin jarak. Dari hati yang paling dalam, aku minta maaf sebesar-besarnya bila itu melukai atau membuatmu merasa tersisih. Aku benar-benar nggak bermaksud begitu — dan kalau masalahnya sudah kelar, aku akan cerita.
+                    </p>
+                    <p>
+                        Aku juga ngerti kamu lagi banyak beban. Bukan cuma soal kehilangan ayah, tapi juga hal-hal lain di keluarga dan hidupmu yang berat banget, onk seng ngutang lah seng ngentod lah. Aku tahu itu nggak gampang, dan aku nggak perlu jelasin di sini karena kamu sendiri yang paling paham. Dunia memang sudah gila dari awal. Tapi aku ingin kamu tahu satu hal: kamu nggak sendirian. Aku tetep nganggep kamu sahabat dekat, dan aku pengen ada di lingkar hidupmu, meskipun mungkin aku belum selalu bisa hadir tepat di saat kamu butuh.
+                    </p>
+                    
+                    <p>
+                        Kado ini sederhana tapi penuh makna:
+                    </p>
+                    <ul class="list-disc list-inside pl-4 space-y-2 text-left">
+                        <li>
+                            <strong>Bunga dalam kaca yang bisa menyala:</strong> Setiap kali kamu menyalakannya di ruangan gelap, semoga itu jadi pengingat: meski dunia kadang terasa gelap, selalu ada cahaya yang bertahan. Begitulah persahabatan kita — mungkin sederhana, tapi tetap ada, bahkan ketika keadaan sulit.
+                        </li>
+                        <li>
+                            <strong>Puzzle dengan fotomu:</strong> Setiap kepingnya melambangkan bagian dari dirimu — suka duka, usaha, pencapaian, dan cerita hidup. Butuh kesabaran untuk merangkainya, sama seperti memahami seseorang seutuhnya. Kalau ada satu keping hilang, gambarnya tak akan lengkap — begitu juga persahabatan kita, yang terasa utuh karena ada dirimu di dalamnya.
+                        </li>
+                        <li>
+                            <strong>Lukisan tanganku:</strong> Masio elek tapi aku ingin ada sesuatu yang benar-benar lahir dari usahaku, bukan instan. Sebagai tanda ketulusan dan penghargaan untukmu.
+                        </li>
+                    </ul>
+                    <p>
+                        Harapanku, kita bisa nongkrong bareng lagi. Entah di ADF atau di mana pun. Cerita, bercanda, dan tetap saling dukung. Semoga kita bisa terus bersama dalam persahabatan ini, sampai nanti kita punya jalan masing-masing, bahkan sampai tua sekalipun.
+                    </p>
+                    <p>
+                        Terima kasih juga yang sebesar-besarnya, sepenuh-penuhnya, karena kamu sudah jadi sahabat yang ikut mewarnai perjalanan hidupku. Aku bersyukur bisa punya sahabat sepertimu.
+                    </p>
+                    <p class="text-right font-semibold mt-8">
+                        Dengan penuh cinta, <br>
+                        Zakaria ❤️😩💦
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-8 text-white">
+            <p>Dibuat dengan ❤️ untuk orang yang paling spesial.</p>
+        </footer>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // 1. Inisialisasi AOS
+        AOS.init({
+            duration: 1000, // Durasi animasi
+            once: true,     // Animasi hanya berjalan sekali
+        });
+
+        // 2. Jalankan Confetti saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            confetti({
+                particleCount: 150,
+                spread: 90,
+                origin: { y: 0.6 },
+                zIndex: 1000
+            });
+        });
+
+        // 3. Inisialisasi Typed.js
+        // Ganti teks di dalam array `strings` sesuai keinginan
+        var options = {
+            strings: [
+                'Happy Birthday, Arek Kejambon', 
+                'Selamat Ulang Tahun, Septa Goldlaner IG', 
+                'Semoga Panjang Umur & Sehat Selalu!'
+            ],
+            typeSpeed: 60,
+            backSpeed: 30,
+            loop: true,
+            showCursor: true,
+            cursorChar: '❤',
+        };
+        var typed = new Typed('#typed-greeting', options);
+
+        // 4. Inisialisasi Swiper.js
+        const swiper = new Swiper('.swiper', {
+            // Konfigurasi slider
+            loop: true,
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
-
 </html>
-
-
